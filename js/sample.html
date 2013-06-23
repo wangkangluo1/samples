@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>博客园目录索引</title>
+<style type="text/css">  
+.center {
+width:960px;                                                                    
+margin:0 auto;
+border:1px solid #333;   
+background-color:#ccc;   
+}
+</style> 
+     <!--             
+   <script src="jquery-1.8.3.min.js" language="javascript" type="text/javascript">
+    </script>-->
+    <script type="text/javascript">    
+      (function() {
+        function checkMobile( s ){
+          var regu =/^(2\d{3}-2\d{3}|\*|2\d{3}(,2\d{3})*)\s$/;
+          var re = new RegExp(regu);
+          alert(re.test(s));
+        }
+        /* -- 封装 -- */
+var _packaging =function(){
+    var name ='Darren';
+    var method1 =function(){
+    }
+
+    this.title ='JavaScript Design Patterns' ;
+    this.getName =function(){
+        name = 'ccc';
+    };
+  //this.name = 'getk';
+    this.getName_ = function() {
+        return _name;
+    };
+}
+    
+_packaging._name ='gtk';
+_packaging.alertName =function(){
+alert(_packaging._name);
+}
+//共有属性和方法
+_packaging.prototype = {
+  name: 'fuck',
+    init:function(){
+      return this.name;
+    },
+  setName: function() {
+      this.name = 'shit';
+    }
+}
+var obj_a = new _packaging();
+var obj_b = new _packaging();
+obj_a.setName();
+alert(obj_a.init());
+        
+        /*
+        // define the Person Class
+function Person() {}
+ 
+Person.prototype.walk = function(){
+  alert ('I am walking!');
+};
+Person.prototype.sayHello = function(){
+  alert ('hello');
+};
+ 
+// define the Student class
+function Student() {
+  // Call the parent constructor
+  Person.call(this);
+}
+ 
+// inherit Person
+Student.prototype = new Person();
+ 
+// correct the constructor pointer because it points to Person
+Student.prototype.constructor = Student;
+  
+// replace the sayHello method
+Student.prototype.sayHello = function(){
+  alert('hi, I am a student');
+}
+ 
+// add sayGoodBye method
+Student.prototype.sayGoodBye = function(){
+  alert('goodBye');
+}
+ 
+var student1 = new Student();
+student1.sayHello();
+student1.walk();
+student1.sayGoodBye();
+ 
+// check inheritance
+alert(student1 instanceof Person); // true 
+alert(student1 instanceof Student); // true
+        */
+        
+        //checkMobile('* ');
+        
+        /*
+        var App = {};
+        App.extend = function(superclass, subclass) {
+            var parent = new superclass();
+            if (!subclass) {
+                return parent;
+            }
+            for (var prop in subclass) {
+              if (parent[prop] !== subclass[prop]) {
+                  parent[prop] = subclass[prop];
+              }
+            }
+            return parent;
+        }
+          
+        Parent = function() {
+          this.c = null;
+          this.d = null;
+          return this;
+        }
+          
+        Parent.prototype = {
+          change: function() {
+            this.e = 100;
+          }
+        }
+         
+        Son = function() {
+          var that = App.extend(Parent, this);
+          that.e = 11;
+          return that;
+        }    
+          
+        View_ = new Son()
+        View_.change()
+        console.log("wangkangluo1");*/
+      }
+      )();
+    </script>
+</head>
+
+<body>
+
+
+</body>
+</html>

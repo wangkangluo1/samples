@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <script class="jsbin" src="./raphael.js"></script>
+        <meta charset="utf-8">
+        <title>asynchronicity</title>        
+   
+        <script type="text/javascript">
+		var circle_1, circle_2;
+        window.onload = function () {
+
+            // Create Canvas
+            var r = Raphael(10, 50, 600, 600);            
+
+            // Make a 'group' of points
+            var Intermediate = r.set();
+			//circle_1 = r.circle(74, 79, 20).attr({fill: "#ff7f00",stroke: "#000000",'stroke-width': 3});
+			//circle_2 = r.circle(74, 79, 10).attr({fill: "#ff7f00",stroke: "#000000",'stroke-width': 4});
+			//circle_1 = r.circle(74, 79, 20).attr({fill: "#ff7f00",stroke: "#000000",'stroke-width': 3});
+			//circle_2 = r.circle(74, 79, 10).attr({fill: "#ff7f00",stroke: "#000000",'stroke-width': 4});
+			
+			circle_1 = r.rect(74, 79, 20, 40).attr({fill: "#ff7f00",stroke: "#000000",'stroke-width': 3});
+			circle_2 = r.rect(74, 79, 10, 50).attr({fill: "#ff7f00",stroke: "#000000",'stroke-width': 4});
+			
+    Intermediate.push(
+        circle_1,
+        circle_2
+        );
+
+var start = function () {
+    // storing original coordinates
+    this.x = this.attr("x");
+    this.y = this.attr("y");
+},
+move = function (dx, dy) {
+    // move will be called with dx and dy
+    //Intermediate.attr({cx: this.ox + dx, cy: this.oy + dy});
+	//console.log(circle_1.getBBox().x);
+	//Intermediate.transform('T' + dx + ',' + dy);
+	
+	//Intermediate.transform('T' + dx + ',' + dy);
+	
+	//Intermediate.translate(dx, dy);
+	var string = 'cx: '+ (this.ox + dx)+' , cy:' + (this.oy + dy) + ']';
+	
+	//console.log(string);
+	
+	var pos = 'T' + dx + ',' + dy;
+	//Intermediate.attr({transform: pos});
+	//Intermediate.attr({'x': this.ox + dx, 'y':this.oy + dy});
+	Intermediate.animate({x: this.x + dx, y: this.y + dy});
+	 //Intermediate.matrix.x(Intermediate.attr("x"),Intermediate.attr("y")); 
+	
+	console.log(Intermediate.getBBox().x);
+},
+up = function () {
+    ;
+};
+Intermediate.drag(move, start, up);
+        };
+        
+        </script>
+    </head>
+
+    <body>
+        <div id="holder"></div>         
+    </body>
+</html>

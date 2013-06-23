@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>Dojo: Hello World!</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"
+               data-dojo-config="async: true"></script>		  
+    </script>
+<script type="text/javascript">
+require(["dojo"], function(dojo){
+ dojo.declare('classA',null,{
+                constructor: function(){
+                    console.log('execute constructor');
+                },
+                protoId:'foo',
+                method:function(){
+                    console.log("I am a foo");
+                }
+            }
+        );
+		
+ dojo.declare('classB',null,{
+                constructor: function(){
+                    console.log('execute constructor');
+                },
+                protoId:'foo',
+                method:function(){
+                    console.log("I am a foo");
+                }
+            }
+        );
+		
+		
+ dojo.declare('classC',[classA, classB],{
+                constructor: function(){
+                    console.log('execute constructor');
+                },
+                protoId:'foo',
+                method:function(){
+				    this.inherited(arguments);
+                    console.log("I am a foo_a");
+                }
+            }
+        );		
+		
+var obj=new  classC();
+obj.method();		
+});
+</script>
+</head>
+
+<body class="tundra">
+</body>
+</html>
